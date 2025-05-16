@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+  <head>
+    <title>AngularJS 1 Todo App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+      .completed {
+        text-decoration: line-through;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div ng-controller="TodoController">
+      <h2>My Todos</h2>
+      <input type="text" ng-model="newTodoText" placeholder="Add new todo" />
+      <button ng-click="addTodo()">Add</button>
+
+      <ul>
+        <li ng-repeat="todo in todos" ng-class="{ completed: todo.done }">
+          <input type="checkbox" ng-model="todo.done" />
+          <span>{{ todo.text }}</span>
+          <button ng-click="removeTodo($index)">Delete</button>
+        </li>
+      </ul>
+    </div>
+
+    <div ng-controller="StatsController">
+      <h3>Todo Statistics</h3>
+      <p>Total Todos: {{ totalTodos }}</p>
+      <p>Completed Todos: {{ completedTodos }}</p>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="controllers/todoController.js"></script>
+    <script src="controllers/statsController.js"></script>
+  </body>
+</html>
