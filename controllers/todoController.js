@@ -1,6 +1,7 @@
-angular
-  .module("todoApp")
-  .controller("TodoController", function (TodoService, $scope) {
+angular.module("todoApp").controller("TodoController", [
+  "TodoService",
+  "$scope",
+  function (TodoService, $scope) {
     $scope.todos = TodoService.getTodos();
 
     $scope.newTodoText = "";
@@ -21,4 +22,5 @@ angular
       TodoService.markAsComplete(index);
       $scope.todos = TodoService.getTodos();
     };
-  });
+  },
+]);
