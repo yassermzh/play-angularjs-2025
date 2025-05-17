@@ -18,7 +18,11 @@
 
       <ul>
         <li ng-repeat="todo in todos" ng-class="{ completed: todo.done }">
-          <input type="checkbox" ng-model="todo.done" />
+          <input
+            type="checkbox"
+            ng-model="todo.done"
+            ng-change="markAsComplete($index)"
+          />
           <span>{{ todo.text }}</span>
           <button ng-click="removeTodo($index)">Delete</button>
         </li>
@@ -27,11 +31,12 @@
 
     <div ng-controller="StatsController">
       <h3>Todo Statistics</h3>
-      <p>Total Todos: {{ totalTodos }}</p>
-      <p>Completed Todos: {{ completedTodos }}</p>
+      <p>Total Todos: {{ getTotalTodos() }}</p>
+      <p>Completed Todos: {{ getCompletedTodos() }}</p>
     </div>
 
     <script src="app.js"></script>
+    <script src="services/todoService.js"></script>
     <script src="controllers/todoController.js"></script>
     <script src="controllers/statsController.js"></script>
   </body>
