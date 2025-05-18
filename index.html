@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html ng-app="todoApp">
   <head>
     <title>AngularJS 1 Todo App</title>
@@ -29,15 +29,11 @@
       </ul>
     </div>
 
-    <div ng-controller="StatsController">
-      <h3>Todo Statistics</h3>
-      <p>Total Todos: {{ getTotalTodos() }}</p>
-      <p>Completed Todos: {{ getCompletedTodos() }}</p>
-    </div>
-
+    <todo-stats></todo-stats>
     <script src="app.js"></script>
     <script src="services/todoService.js"></script>
     <script src="controllers/todoController.js"></script>
     <script src="controllers/statsController.js"></script>
+    <script src="directives/todoStatsDirective.js"></script>
   </body>
 </html>
