@@ -11,26 +11,12 @@
     </style>
   </head>
   <body>
-    <div ng-controller="TodoController">
-      <h2>My Todos</h2>
-      <input type="text" ng-model="newTodoText" placeholder="Add new todo" />
-      <button ng-click="addTodo()">Add</button>
-
-      <ul>
-        <li ng-repeat="todo in todos" ng-class="{ completed: todo.done }">
-          <todo-item
-            todo="todo"
-            on-toggle="markAsComplete($index)"
-            remove-todo="removeTodo($index)"
-          ></todo-item>
-        </li>
-      </ul>
-    </div>
-
+    <todo-list></todo-list>
     <todo-stats></todo-stats>
+
     <script src="app.js"></script>
     <script src="services/todoService.js"></script>
-    <script src="controllers/todoController.js"></script>
+    <script src="directives/todoListComponent.js"></script>
     <script src="directives/todoStatsDirective.js"></script>
     <script src="directives/todoItemDirective.js"></script>
   </body>
