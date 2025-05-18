@@ -20,8 +20,8 @@
         <li ng-repeat="todo in todos" ng-class="{ completed: todo.done }">
           <input
             type="checkbox"
-            ng-model="todo.done"
-            ng-change="markAsComplete($index)"
+            ng-checked="todo.done"
+            ng-click="markAsComplete($index)"
           />
           <span>{{ todo.text }}</span>
           <button ng-click="removeTodo($index)">Delete</button>
