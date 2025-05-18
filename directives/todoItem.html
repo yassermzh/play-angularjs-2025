@@ -1,0 +1,3 @@
+<input type="checkbox" ng-checked="todo.done" ng-click="onToggle()" />
+<span ng-class="{ completed: todo.done }">{{ todo.text }}</span>
+<button ng-click="removeTodo()">Remove</button>
