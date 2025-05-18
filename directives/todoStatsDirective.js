@@ -8,14 +8,6 @@ angular.module("todoApp").directive("todoStats", function () {
     </div>
     `,
     scope: {},
-    // controller: "StatsController",
-    controller: function (TodoService, $scope) {
-      $scope.getTotalTodos = function () {
-        return TodoService.getTotalTodos();
-      };
-      $scope.getCompletedTodos = function () {
-        return TodoService.getCompletedTodos();
-      };
-    },
+    controller: "StatsController",
   };
 });
