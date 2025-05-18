@@ -1,13 +1,17 @@
-angular.module("todoApp").directive("todoStats", function () {
-  return {
-    restrict: "E",
-    template: `
+function StatsController(TodoService) {
+  this.getTotalTodos = function () {
+    return TodoService.getTotalTodos();
+  };
+
+  this.getCompletedTodos = () => TodoService.getCompletedTodos();
+}
+
+angular.module("todoApp").component("todoStats", {
+  template: `
     <div>
-      <p>You have {{ getTotalTodos() }} todos</p>
-      <p>You have {{ getCompletedTodos() }} completed todos</p>
+      <p>You have {{ $ctrl.getTotalTodos() }} todos</p>
+      <p>You have {{ $ctrl.getCompletedTodos() }} completed todos</p>
     </div>
     `,
-    scope: {},
-    controller: "StatsController",
-  };
+  controller: StatsController,
 });
