@@ -1,0 +1,12 @@
+<h2>My Todos</h2>
+<input type="text" ng-model="$ctrl.newTodoText" placeholder="Add new todo" />
+<button ng-click="$ctrl.addTodo()">Add</button>
+<ul>
+  <li ng-repeat="todo in $ctrl.todos" ng-class="{ completed: todo.done }">
+    <todo-item
+      todo="todo"
+      on-toggle="$ctrl.markAsComplete($index)"
+      remove-todo="$ctrl.removeTodo($index)"
+    ></todo-item>
+  </li>
+</ul>

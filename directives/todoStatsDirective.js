@@ -7,12 +7,7 @@ function StatsController(TodoService) {
 }
 
 const TodoStatsComponent = {
-  template: `
-    <div>
-      <p>You have {{ $ctrl.getTotalTodos() }} todos</p>
-      <p>You have {{ $ctrl.getCompletedTodos() }} completed todos</p>
-    </div>
-    `,
+  templateUrl: "directives/todoStats.html",
   controller: StatsController,
 };
 
