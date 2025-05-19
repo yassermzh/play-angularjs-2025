@@ -2,7 +2,7 @@ function TodoItemController() {
   console.log("controller");
 }
 
-angular.module("todoApp").component("todoItem", {
+const TodoItemComponent = {
   bindings: {
     todo: "<",
     onToggle: "&",
@@ -10,4 +10,6 @@ angular.module("todoApp").component("todoItem", {
   },
   controller: TodoItemController,
   templateUrl: "directives/todoItem.html",
-});
+};
+
+export default TodoItemComponent;

@@ -1,4 +1,4 @@
-angular.module("todoApp").service("TodoService", function () {
+export default function () {
   var todos = [
     { text: "Learn AngularJS 1", done: true },
     { text: "Build a todo app", done: false },
@@ -35,4 +35,4 @@ angular.module("todoApp").service("TodoService", function () {
       return todo.done;
     }).length;
   };
-});
+}

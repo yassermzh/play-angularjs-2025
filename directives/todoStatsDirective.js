@@ -6,7 +6,7 @@ function StatsController(TodoService) {
   this.getCompletedTodos = () => TodoService.getCompletedTodos();
 }
 
-angular.module("todoApp").component("todoStats", {
+const TodoStatsComponent = {
   template: `
     <div>
       <p>You have {{ $ctrl.getTotalTodos() }} todos</p>
@@ -14,4 +14,6 @@ angular.module("todoApp").component("todoStats", {
     </div>
     `,
   controller: StatsController,
-});
+};
+
+export default TodoStatsComponent;

@@ -21,7 +21,7 @@ function TodoListController(TodoService) {
   };
 }
 
-angular.module("todoApp").component("todoList", {
+const TodoListComponent = {
   template: `
     <h2>My Todos</h2>
     <input type="text" ng-model="$ctrl.newTodoText" placeholder="Add new todo" />
@@ -37,4 +37,6 @@ angular.module("todoApp").component("todoList", {
     </ul>
   `,
   controller: TodoListController,
-});
+};
+
+export default TodoListComponent;
