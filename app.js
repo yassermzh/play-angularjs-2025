@@ -2,6 +2,7 @@ import TodoService from "./services/todoService.js";
 import TodoItemComponent from "./directives/todoItemDirective.js";
 import TodoListComponent from "./directives/todoListComponent.js";
 import TodoStatsComponent from "./directives/todoStatsDirective.js";
+import Dialog from "./directives/dialogDirective.js";
 
 angular.module("todoApp", []);
 
@@ -10,4 +11,5 @@ angular
   .service("TodoService", TodoService)
   .component("todoItem", TodoItemComponent)
   .component("todoList", TodoListComponent)
-  .component("todoStats", TodoStatsComponent);
+  .component("todoStats", TodoStatsComponent)
+  .directive("dialog", Dialog);
