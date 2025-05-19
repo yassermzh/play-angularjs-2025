@@ -5,8 +5,8 @@
 />
 <span ng-class="{ completed: $ctrl.todo.done }">{{ $ctrl.todo.text }}</span>
 <button ng-click="$ctrl.showConfirmDialog()">Remove</button>
-<dialog
-  isOpen="$ctrl.isConfirmDialogOpen"
-  on-confirm="$ctrl.removeTodo()"
-  on-cancel="$ctrl.isConfirmDialogOpen = false"
-></dialog>
+<my-dialog is-open="$ctrl.isConfirmDialogOpen">
+  <p>Are you sure?</p>
+  <button ng-click="$ctrl.removeTodo()">Yes</button>
+  <button ng-click="$ctrl.isConfirmDialogOpen = false">No</button>
+</my-dialog>

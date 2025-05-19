@@ -1,17 +1,9 @@
-const Dialog = {
+const MyDialog = {
   bindings: {
     isOpen: "<",
-    onConfirm: "&",
-    onCancel: "&",
   },
-  controller: function () {},
-  template: `
-    <div ng-show="$ctrl.isOpen">
-      <p>Are you sure?</p>
-      <button ng-click="$ctrl.onConfirm()">Yes</button>
-      <button ng-click="$ctrl.onCancel()">No</button>
-    </div>
-  `,
+  transclude: true,
+  template: `<dialog ng-open="$ctrl.isOpen" ng-transclude></dialog>`,
 };
 
-export default Dialog;
+export default MyDialog;
