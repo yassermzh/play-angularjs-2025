@@ -4,4 +4,9 @@
   ng-click="$ctrl.onToggle()"
 />
 <span ng-class="{ completed: $ctrl.todo.done }">{{ $ctrl.todo.text }}</span>
-<button ng-click="$ctrl.removeTodo()">Remove</button>
+<button ng-click="$ctrl.showConfirmDialog()">Remove</button>
+<div ng-show="$ctrl.isConfirmDialogOpen">
+  <p>Are you sure?</p>
+  <button ng-click="$ctrl.removeTodo()">Yes</button>
+  <button ng-click="$ctrl.isConfirmDialogOpen = false">No</button>
+</div>

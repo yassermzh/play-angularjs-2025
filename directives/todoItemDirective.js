@@ -1,5 +1,8 @@
 function TodoItemController() {
-  console.log("controller");
+  this.isConfirmDialogOpen = false;
+  this.showConfirmDialog = function () {
+    this.isConfirmDialogOpen = true;
+  };
 }
 
 const TodoItemComponent = {
